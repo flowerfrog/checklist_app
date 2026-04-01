@@ -24,11 +24,11 @@ android {
     minSdk = 21
     targetSdk = 34
 
-    val flutterVersionCode = (project.extra["flutter.versionCode"] as String).toInt()
-    val flutterVersionName = project.extra["flutter.versionName"] as String
+    val versionCodeProp = project.findProperty("flutter.versionCode")?.toString()
+    val versionNameProp = project.findProperty("flutter.versionName")?.toString()
 
-    versionCode = flutterVersionCode
-    versionName = flutterVersionName
+    versionCode = versionCodeProp?.toInt() ?: 1
+    versionName = versionNameProp ?: "1.0"
     }
 
     buildTypes {
