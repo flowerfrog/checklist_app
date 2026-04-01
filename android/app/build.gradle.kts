@@ -20,14 +20,12 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.checklist_app"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode.toInt()
-        versionName = flutter.versionName
+    applicationId = "com.example.checklist_app"
+    minSdk = 21
+    targetSdk = 34
+
+    versionCode = (project.property("flutter.versionCode") as String).toInt()
+    versionName = project.property("flutter.versionName") as String
     }
 
     buildTypes {
